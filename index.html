@@ -3,56 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Ronald ❤️</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Happy 30th Ronald!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;600&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fff5f5;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1, h2 {
+            color: #d63384;
+            margin-bottom: 20px;
+        }
+
+        .cursive {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+        }
+
+        .highlight {
+            font-size: 4rem;
+            color: #ff4d6d;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            display: block;
+            margin: 20px 0;
+        }
+
+        .cake-img {
+            width: 150px;
+            margin-top: 20px;
+        }
+
+        /* Photo Animation Styles */
+        #slideshow-container {
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        .nav-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.9rem;
+            color: #888;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+    </style>
 </head>
 <body>
 
+    <section id="page1">
+        <h1 class="cursive">Hi Ronald,</h1>
+        <p style="font-size: 1.5rem;">Thanks for coming into my life.</p>
+        <div class="nav-hint">Scroll down ↓</div>
+    </section>
 
-
-    <!-- Page 1 -->
-    <div class="page active">
-        <h1>Hi Ronald ❤️</h1>
-        <p>Thanks for coming into my life</p>
-        <button class="yes" onclick="nextPage()">Next ➡️</button>
-    </div>
-
-    <!-- Page 2 -->
-    <div class="page">
-        <p>
-            Today is a special day,<br>
-            I want to celebrate everyday with you but today is more special.<br><br>
-            30 years ago you came into this world for me.....<br>
-            <b>ONLY FOR ME ❤️</b>
+    <section id="page2" style="background-color: #ffeef2;">
+        <p style="line-height: 1.8; max-width: 600px; font-size: 1.2rem;">
+            Today is a special day, I want to celebrate everyday with you but today is more special. <br><br>
+            <strong>30 years ago</strong> you came into this world for me...<br>
+            <span class="cursive" style="font-size: 2.5rem; color: #ff4d6d;">ONLY FOR ME.</span>
         </p>
-        <button class="yes" onclick="nextPage()">Next ➡️</button>
-    </div>
+    </section>
 
-    <!-- Page 3 -->
-    <div class="page">
-        <h1 class="highlight">🎂 Happy 30th Birthday Ronald 🎂</h1>
-        <p>
-            This will be your last birthday you celebrating without me,<br>
-            from now on let's celebrate every birthday together ❤️
+    <section id="page3">
+        <h2 class="highlight">Happy 30th Birthday Ronald!</h2>
+        <p style="font-size: 1.2rem; max-width: 600px;">
+            This will be your last birthday you celebrating without me, <br>
+            from now on let's celebrate every birthday together.
         </p>
+        <img src="https://img.icons8.com/emoji/96/000000/birthday-cake-emoji.png" alt="Cake" class="cake-img">
+        <img src="https://img.icons8.com/emoji/96/000000/birthday-cake-emoji.png" alt="Cake" class="cake-img">
+    </section>
 
-        <div class="cakes">
-            <img src="https://cdn-icons-png.flaticon.com/512/992/992754.png">
-            <img src="https://cdn-icons-png.flaticon.com/512/685/685352.png">
-            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
-        </div>
+    <section id="page4" style="background-color: #ffeef2;">
+        <h2 class="cursive">Our Memories</h2>
+        <div id="slideshow-container">
+            <img src="RRimage1.jpg" class="slide" alt="Us 1">
+            <img src="RRimage2.jpg" class="slide" alt="Us 2">
+            <img src="RRimage3.jpg" class="slide" alt="Us 3">
+            <img src="RRimage4.jpg" class="slide" alt="Us 4">
+            </div>
+    </section>
 
-        <button class="yes" onclick="nextPage()">Next ➡️</button>
-    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
 
-    <!-- Page 4 -->
-    <div class="page">
-        <h2>Our Beautiful Memories ❤️</h2>
-        <img id="slideshow" src="RRimage4.jpg"></img>
-    </div>
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
 
-</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 30th Ronald!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;600&display=swap');
 
-<script src="script.js"></script>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fff5f5;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1, h2 {
+            color: #d63384;
+            margin-bottom: 20px;
+        }
+
+        .cursive {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+        }
+
+        .highlight {
+            font-size: 4rem;
+            color: #ff4d6d;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            display: block;
+            margin: 20px 0;
+        }
+
+        .cake-img {
+            width: 150px;
+            margin-top: 20px;
+        }
+
+        /* Photo Animation Styles */
+        #slideshow-container {
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        .nav-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.9rem;
+            color: #888;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+    </style>
+</head>
+<body>
+
+    <section id="page1">
+        <h1 class="cursive">Hi Ronald,</h1>
+        <p style="font-size: 1.5rem;">Thanks for coming into my life.</p>
+        <div class="nav-hint">Scroll down ↓</div>
+    </section>
+
+    <section id="page2" style="background-color: #ffeef2;">
+        <p style="line-height: 1.8; max-width: 600px; font-size: 1.2rem;">
+            Today is a special day, I want to celebrate everyday with you but today is more special. <br><br>
+            <strong>30 years ago</strong> you came into this world for me...<br>
+            <span class="cursive" style="font-size: 2.5rem; color: #ff4d6d;">ONLY FOR ME.</span>
+        </p>
+    </section>
+
+    <section id="page3">
+        <h2 class="highlight">Happy 30th Birthday Ronald!</h2>
+        <p style="font-size: 1.2rem; max-width: 600px;">
+            This will be your last birthday you celebrating without me, <br>
+            from now on let's celebrate every birthday together.
+        </p>
+        <img src="https://img.icons8.com/emoji/96/000000/birthday-cake-emoji.png" alt="Cake" class="cake-img">
+        <img src="https://img.icons8.com/emoji/96/000000/birthday-cake-emoji.png" alt="Cake" class="cake-img">
+    </section>
+
+    <section id="page4" style="background-color: #ffeef2;">
+        <h2 class="cursive">Our Memories</h2>
+        <div id="slideshow-container">
+            <img src="RRimage1.jpg" class="slide" alt="Us 1">
+            <img src="RRimage2.jpg" class="slide" alt="Us 2">
+            <img src="RRimage3.jpg" class="slide" alt="Us 3">
+            <img src="RRimage4.jpg" class="slide" alt="Us 4">
+            </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
+
 </body>
 </html>
