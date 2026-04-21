@@ -24,7 +24,7 @@ function switchPage(from, to) {
 
 // Slideshow
 const images = [
-    <><img src="RRimage1.jpg"></img><img src="RRimage2.jpg"></img><img src="RRimage3.jpg"></img><img src="RRimage4.jpg"></img></>
+    <><img src="RRimage1.jpg"></img>
     
 ];
 
