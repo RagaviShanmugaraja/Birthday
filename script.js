@@ -7,11 +7,7 @@ function nextPage() {
     pages[currentPage].classList.add("active");
 }
 
-// 🎵 Music control
-function playMusic() {
-    const music = document.getElementById("bg-music");
-    music.play();
-}
+
 
 // Slideshow
 const images = [
