@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ronald ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" onclick="playMusic()">🎵 Play Music</button>
+
+<div class="container">
+
+    <!-- Page 1 -->
+    <div class="page active">
+        <h1>Hi Ronald ❤️</h1>
+        <p>Thanks for coming into my life</p>
+        <button onclick="nextPage()">Next ➡️</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+        <p>
+            Today is a special day,<br>
+            I want to celebrate everyday with you but today is more special.<br><br>
+            30 years ago you came into this world for me.....<br>
+            <b>ONLY FOR ME ❤️</b>
+        </p>
+        <button onclick="nextPage()">Next ➡️</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page">
+        <h1 class="highlight">🎂 Happy 30th Birthday Ronald 🎂</h1>
+        <p>
+            This will be your last birthday you celebrating without me,<br>
+            from now on let's celebrate every birthday together ❤️
+        </p>
+
+        <div class="cakes">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992754.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/685/685352.png">
+            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+        </div>
+
+        <button onclick="nextPage()">Next ➡️</button>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page">
+        <h2>Our Beautiful Memories ❤️</h2>
+        <img id="slideshow" src="RRimage1.jpg"></img><img src="RRimage2.jpg"></img><img src="RRimage3.jpg"></img><img src="RRimage4.jpg"></img>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
