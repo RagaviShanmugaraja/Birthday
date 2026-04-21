@@ -1,21 +1,12 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
-function goToPage2() {
-    switchPage("page1", "page2");
-}
-
-function goToPage3() {
-    switchPage("page2", "page3");
-}
-
-function goToPage4() {
-    switchPage("page3", "page4");
-}
-
-function switchPage(from, to) {
-    document.getElementById(from).classList.remove("active");
-    document.getElementById(to).classList.add("active");
+function nextPage() {
+    if (currentPage < pages.length - 1) {
+        pages[currentPage].classList.remove("active");
+        currentPage++;
+        pages[currentPage].classList.add("active");
+    }
 }
 
 
@@ -24,8 +15,10 @@ function switchPage(from, to) {
 
 // Slideshow
 const images = [
-    <><img src="RRimage1.jpg"></img><img src="RRimage2.jpg"></img><img src="RRimage3.jpg"></img><img src="RRimage4.jpg"></img></>
-    
+    "RRimage1.jpg",
+    "RRimage2.jpg",
+    "RRimage3.jpg",
+    "RRimage4.jpg"
 ];
 
 let index = 0;
