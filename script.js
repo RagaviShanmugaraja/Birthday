@@ -1,13 +1,24 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
-function nextPage() {
-    if (currentPage < pages.length - 1) {
-        pages[currentPage].classList.remove("active");
-        currentPage++;
-        pages[currentPage].classList.add("active");
-    }
+function goToPage2() {
+    switchPage("page1", "page2");
 }
+
+function goTPage3() {
+    switchPage("page2", "page3");
+}
+
+function goToPage4() {
+    switchPage("page3", "page4");
+}
+
+function switchPage(from, to) {
+    document.getElementById(from).classList.remove("active");
+    document.getElementById(to).classList.add("active");
+}
+
+
 
 
 
