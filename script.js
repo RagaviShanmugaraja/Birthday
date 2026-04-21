@@ -5,7 +5,7 @@ function goToPage2() {
     switchPage("page1", "page2");
 }
 
-function goTPage3() {
+function goToPage3() {
     switchPage("page2", "page3");
 }
 
